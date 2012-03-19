@@ -40,23 +40,7 @@ public class JMBG {
 	
 	public void setJmbg(String jmbg) {
 		
-		// Pretvaranje svake cifre u poseban broj, radi provere kontrilne cifre
-		Integer A = Integer.parseInt(jmbg.substring(0, jmbg.length()-12));
-		Integer B = Integer.parseInt(jmbg.substring(1, jmbg.length()-11));
-		Integer C = Integer.parseInt(jmbg.substring(2, jmbg.length()-10));
-		Integer D = Integer.parseInt(jmbg.substring(3, jmbg.length()-9));
-		Integer E = Integer.parseInt(jmbg.substring(4, jmbg.length()-8));
-		Integer F = Integer.parseInt(jmbg.substring(5, jmbg.length()-7));
-		Integer G = Integer.parseInt(jmbg.substring(6, jmbg.length()-6));
-		Integer H = Integer.parseInt(jmbg.substring(7, jmbg.length()-5));
-		Integer I = Integer.parseInt(jmbg.substring(8, jmbg.length()-4));
-		Integer J = Integer.parseInt(jmbg.substring(9, jmbg.length()-3));
-		Integer K = Integer.parseInt(jmbg.substring(10, jmbg.length()-2));
-		Integer L = Integer.parseInt(jmbg.substring(11, jmbg.length()-1));
-		Integer M = Integer.parseInt(jmbg.substring(12, jmbg.length()-0));
 		
-		// Izracunavanje Kontrolne cifre
-		int kontrolnacifra = 11 - ((7*(A + G) + 6*(B + H) + 5*(C + I) + 4*(D + J) + 3*(E + K) + 2*(F + L)) % 11) ;
 
 		// Provera jmbg za upisivanje
 		if ( jmbg == null ) {
@@ -71,6 +55,25 @@ public class JMBG {
 			System.out.println("jmbg mora da bude duzine 13 karaktera.");
 			greska = 1;
 		}
+		
+		if ( greska != 1 ) {
+		// Pretvaranje svake cifre u poseban broj, radi provere kontrilne cifre
+				Integer A = Integer.parseInt(jmbg.substring(0, jmbg.length()-12));
+				Integer B = Integer.parseInt(jmbg.substring(1, jmbg.length()-11));
+				Integer C = Integer.parseInt(jmbg.substring(2, jmbg.length()-10));
+				Integer D = Integer.parseInt(jmbg.substring(3, jmbg.length()-9));
+				Integer E = Integer.parseInt(jmbg.substring(4, jmbg.length()-8));
+				Integer F = Integer.parseInt(jmbg.substring(5, jmbg.length()-7));
+				Integer G = Integer.parseInt(jmbg.substring(6, jmbg.length()-6));
+				Integer H = Integer.parseInt(jmbg.substring(7, jmbg.length()-5));
+				Integer I = Integer.parseInt(jmbg.substring(8, jmbg.length()-4));
+				Integer J = Integer.parseInt(jmbg.substring(9, jmbg.length()-3));
+				Integer K = Integer.parseInt(jmbg.substring(10, jmbg.length()-2));
+				Integer L = Integer.parseInt(jmbg.substring(11, jmbg.length()-1));
+				Integer M = Integer.parseInt(jmbg.substring(12, jmbg.length()-0));
+				
+				// Izracunavanje Kontrolne cifre
+				int kontrolnacifra = 11 - ((7*(A + G) + 6*(B + H) + 5*(C + I) + 4*(D + J) + 3*(E + K) + 2*(F + L)) % 11) ;
 		
 			// Provera Dana, Meseca i Godine Rodjenja
 		Integer danRodjenjaINT = Integer.parseInt(jmbg.substring(0, jmbg.length()-11));
@@ -228,6 +231,10 @@ public class JMBG {
 		}
 		
 		this.jmbg = jmbg;
+		}
+		else {
+			System.out.println("Nemoguce ja proverite jmbg zbog greske u maticnom broju");
+		}
 		
 		
 	}
@@ -373,6 +380,8 @@ public class JMBG {
 	public void jmbgUDatumRodjenja () {
 		
 		// Pravljenje datuma rodjenja u Stringu
+		
+		if ( greska != 1 ) {
 		String danRodjenjaa = jmbg.substring(0, jmbg.length()-11);
 		String mesecRodjenjaa = jmbg.substring(2, jmbg.length()-9);
 		String godinaRodjenjaa = jmbg.substring(4, jmbg.length()-6);
@@ -399,6 +408,11 @@ public class JMBG {
 		danRodjenja = danRodjenjaa;
 		mesecRodjenja = mesecRodjenjaa;
 		godinaRodjenja = godinaRodjenjaa;
+		}
+		
+		else {
+			System.out.println("Pravljenje datuma je nemoguce uraditi jel postoji greska u maticnom broju");
+		}
 		
 	}
 	
@@ -410,6 +424,8 @@ public class JMBG {
 		
 		// Provera Pol-a 
 		
+		if ( greska != 1 ) {
+		
 		Integer pol = Integer.parseInt(jmbg.substring(9, jmbg.length()-1));
 		
 		if ( pol < 500 ) {
@@ -420,12 +436,19 @@ public class JMBG {
 			this.pol = "Zenski";
 			System.out.println("Osoba je Zenskog pol-a");
 		}
+		}
+		
+		else {
+			System.out.println("Pol je nemoguce odrediti jer postoji greska u maticnom broju");
+		}
 		
 	}
 	
 	public void RegionRodjenja () {
 		
 		//Provera Mesta Rodjenja
+		
+		if ( greska != 1 ) {
 		
 		Integer regionRodjenja = Integer.parseInt(jmbg.substring(7, jmbg.length()-4));
 		System.out.println("region rodjenja je: " + regionRodjenja);
@@ -751,6 +774,10 @@ public class JMBG {
 		}
 		
 		System.out.println("Drzava rodjenja je: " + drzavaRodjenja + " Mesto Rodjenja je: " + mestoRodjenja);		
+		}
+		else {
+			System.out.println("Provera mesta rodjenja je nemoguce izvesti jer postoji greska u sistemu");
+		}
 		
 	}
 
