@@ -78,7 +78,7 @@ public class GUI extends JFrame {
 					j.RegionRodjenja();
 					
 					if ( j.getGreska() != 0) {
-						
+						txtUnosenjeJMBGa.setText("");
 						do {
 							if (j.brojacGUI == 3 ) {
 								JOptionPane.showMessageDialog(null, "Previse puta ste pokusali dovidjenja :D ");
@@ -89,7 +89,8 @@ public class GUI extends JFrame {
 								j.setGreska(0);
 						  String ans;
 					        ans = JOptionPane.showInputDialog(null, "Pogresno ste uneli vas JMBG, probajte ponovo.");
-					        j.setJmbg(ans);
+					        txtUnosenjeJMBGa.setText(ans);
+					        j.setJmbg(txtUnosenjeJMBGa.getText());
 					        
 					        j.jmbgUDatumRodjenja();
 							j.stringUKalendar();
@@ -101,6 +102,8 @@ public class GUI extends JFrame {
 							textMestoRodjenja.setText(j.getMestoRodjenja());
 							textPol.setText(j.getPol());
 							j.brojacGUI++;
+							
+							break;
 							
 							}
 						}
@@ -128,7 +131,7 @@ public class GUI extends JFrame {
 		contentPane.add(txtUnosenjeJMBGa);
 		txtUnosenjeJMBGa.setColumns(10);
 		
-		// Pravim Bitton za Unosenje jmbg, i komanda koja ce se uneti
+		// Pravim Button za Unosenje jmbg, i komanda koja ce se uneti
 		
 		JButton btnUnesiJMBG = new JButton("Unesi");
 		btnUnesiJMBG.addActionListener(new ActionListener() {
@@ -143,7 +146,7 @@ public class GUI extends JFrame {
 				j.RegionRodjenja();
 				
 				if ( j.getGreska() != 0) {
-					
+					txtUnosenjeJMBGa.setText("");
 					do {
 						if (j.brojacGUI == 3 ) {
 							JOptionPane.showMessageDialog(null, "Previse puta ste pokusali dovidjenja :D ");
@@ -154,7 +157,9 @@ public class GUI extends JFrame {
 							j.setGreska(0);
 					  String ans;
 				        ans = JOptionPane.showInputDialog(null, "Pogresno ste uneli vas JMBG, probajte ponovo.");
-				        j.setJmbg(ans);
+				        
+				        txtUnosenjeJMBGa.setText(ans);
+				        j.setJmbg(txtUnosenjeJMBGa.getText());
 				        
 				        j.jmbgUDatumRodjenja();
 						j.stringUKalendar();
@@ -166,6 +171,8 @@ public class GUI extends JFrame {
 						textMestoRodjenja.setText(j.getMestoRodjenja());
 						textPol.setText(j.getPol());
 						j.brojacGUI++;
+						
+						break;
 						
 						}
 					}
