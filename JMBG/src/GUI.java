@@ -241,3 +241,5 @@ public class GUI extends JFrame {
 		contentPane.add(lblPodaciOVama);
 	}
 }
+
+// Ovaj komentar je dodat zato sto sam CAR :D
