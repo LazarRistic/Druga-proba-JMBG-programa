@@ -126,7 +126,7 @@ public class GUI extends JFrame {
 		
 		// Zavrseno ENTER dodavanje
 		
-		txtUnosenjeJMBGa.setText("Unesite vas jmbg");
+		txtUnosenjeJMBGa.setText("Unseite vas jmbg");
 		txtUnosenjeJMBGa.setBounds(10, 42, 208, 20);
 		contentPane.add(txtUnosenjeJMBGa);
 		txtUnosenjeJMBGa.setColumns(10);
@@ -242,4 +242,3 @@ public class GUI extends JFrame {
 	}
 }
 
-// Ovaj komentar je dodat zato sto sam CAR :D
