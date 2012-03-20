@@ -47,80 +47,75 @@ public class GUI extends JFrame {
 		});
 
 	}
-	
-	
+
 	/*
 	 * Metoda koja se ubacuje kao akcija na nesto.
-	 *  
-	 * Metoda uzima iz txt polja JMBG rezultat,
-	 * uz pomoc tog rezultata pravi ostale rezultate
-	 * u koliko dodje do greske izbacuje novi prozor,
-	 * u novom prozoru moze da se unese ponovo JMBG
-	 * u koliko se opt pogresi prozor se opet pojavljuje.
-	 * Prozor moze das e pojavi 3 puta, posle toga izlazi novi prozor.
-	 * Novi prozor prikazuje poruku o tome da je nastala greska i izlazi iz programa.
 	 * 
+	 * Metoda uzima iz txt polja JMBG rezultat, uz pomoc tog rezultata pravi
+	 * ostale rezultate u koliko dodje do greske izbacuje novi prozor, u novom
+	 * prozoru moze da se unese ponovo JMBG u koliko se opt pogresi prozor se
+	 * opet pojavljuje. Prozor moze das e pojavi 3 puta, posle toga izlazi novi
+	 * prozor. Novi prozor prikazuje poruku o tome da je nastala greska i izlazi
+	 * iz programa.
 	 */
-	
-	public void ubacivanjeUPoljaRezultate () {
-		
+
+	public void ubacivanjeUPoljaRezultate() {
+
 		j.setJmbg(txtUnosenjeJMBGa.getText());
 
-		if (j.getGreska() == 1 ) {
+		if (j.getGreska() == 1) {
 			txtUnosenjeJMBGa.setText("");
-			
+
 			do {
-				if ( j.brojacGUI == 3 ) {
+				if (j.brojacGUI == 3) {
 					noviProzorZaPrevisePokusaja();
 				}
-				
+
 				else {
 					noviProzorZaPogresanJMBG();
 				}
 			}
-			
-			while ( j.getGreska() == 1 && j.brojacGUI <= 3 );
+
+			while (j.getGreska() == 1 && j.brojacGUI <= 3);
 		}
-		
+
 		else {
 			textDatumRodjenja.setText(j.getDatumRodjenja());
 			textDrzavaRodjenja.setText(j.getDrzavaRodjenja());
 			textMestoRodjenja.setText(j.getMestoRodjenja());
 			textPol.setText(j.getPol());
 		}
-		
+
 		j.jmbgUDatumRodjenja();
 		j.stringUKalendar();
 		j.Pol();
 		j.RegionRodjenja();
 	}
-	
+
 	/*
 	 * Ova metoda izbacuje novi prozor koj kaze:
-	 * "Previse puta ste pokusali dovidjenja :D "
-	 * i izlazi iz programa
+	 * "Previse puta ste pokusali dovidjenja :D " i izlazi iz programa
 	 */
-	
-	public void noviProzorZaPrevisePokusaja () {
-		JOptionPane.showMessageDialog(null, "Previse puta ste pokusali dovidjenja :D ");
+
+	public void noviProzorZaPrevisePokusaja() {
+		JOptionPane.showMessageDialog(null,
+				"Previse puta ste pokusali dovidjenja :D ");
 
 		System.exit(0);
 	}
-	
+
 	/*
-	 * Ova metoda izbacuje novi prozor,
-	 * u kome pise da ste pogresno uneli JMBG
-	 * daje vam txt polje u kome mozete ponovo da napisete jmbg.
-	 * taj jmbg upisuje u polje glavnog prozora i izracuvana podatke odatle.
-	 * Inkrementuje brojaGUI zbog zastite ( da neko ne pogadja milion puta maticni broj )
+	 * Ova metoda izbacuje novi prozor, u kome pise da ste pogresno uneli JMBG
+	 * daje vam txt polje u kome mozete ponovo da napisete jmbg. taj jmbg
+	 * upisuje u polje glavnog prozora i izracuvana podatke odatle. Inkrementuje
+	 * brojaGUI zbog zastite ( da neko ne pogadja milion puta maticni broj )
 	 */
-	
-	public void noviProzorZaPogresanJMBG () {
+
+	public void noviProzorZaPogresanJMBG() {
 		j.setGreska(0);
 		String ans;
-		ans = JOptionPane
-				.showInputDialog(null,
-						"Pogresno ste uneli vas JMBG, probajte ponovo.");
+		ans = JOptionPane.showInputDialog(null,
+				"Pogresno ste uneli vas JMBG, probajte ponovo.");
 		txtUnosenjeJMBGa.setText(ans);
 		j.setJmbg(txtUnosenjeJMBGa.getText());
 
@@ -135,7 +130,6 @@ public class GUI extends JFrame {
 		textPol.setText(j.getPol());
 		j.brojacGUI++;
 	}
-	
 
 	/**
 	 * Create the frame.
@@ -158,7 +152,7 @@ public class GUI extends JFrame {
 				int key = e.getKeyCode();
 				if (key == KeyEvent.VK_ENTER) {
 					Toolkit.getDefaultToolkit().beep();
-					
+
 					ubacivanjeUPoljaRezultate();
 
 				}
@@ -177,7 +171,7 @@ public class GUI extends JFrame {
 		JButton btnUnesiJMBG = new JButton("Unesi");
 		btnUnesiJMBG.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				ubacivanjeUPoljaRezultate();
 
 			}
