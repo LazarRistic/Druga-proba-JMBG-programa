@@ -1,0 +1,89 @@
+Ovde stoje komentari koje se nalaze u programu, radi lakse pronalazenja.
+
+JMBG.java
+
+// Get i Set Metode za KonacanDatum i JMBG
+
+// Provera jmbg za upisivanje
+
+/*
+ * Pretvaranje svake cifre u poseban broj, radi provere kontrilne
+ * cifre
+ */
+
+// Izracunavanje Kontrolne cifre
+
+// Provera Dana, Meseca i Godine Rodjenja
+
+// Kontrola Dana u mesecu
+
+// Provera koliko cifara u maticnom broju su brojevi
+
+// Provera Kontrolne cifre
+
+// Get i Set metoda za DatumRodjenja
+
+// Pravljenje datuma rodjenja u Stringu
+
+/*
+ *  Od Dana Rodjenja, Meseca Rodjenja i Godine Rodjenja pravimo Datum
+ *  Rodjenja :D
+ */
+
+// Treba da se pretvori String u Date ili u GeorgianCalendar
+
+// Provera Pol-a
+
+// Provera Mesta Rodjenja
+
+	// Rodjeni u Bosna i Hercegovina
+	// Rodjeni u Crna Gora
+	// Rodjeni u Hrvatska
+	// Rodjeni u Makedonija
+	// Rodjeni u Slovenija
+		// Slovenija koristi samo broj 50 za celu drzavu
+	// Rodjeni u Srbija
+		// Rodjeni u Uza Srbija ( Bez Pokrajna: Vojvodine i Kosova i
+		// Metohije )
+		// Rodjeni u Autonomska Pokrajina Vojvodina
+		// Rodjeni u Kosovo i Metehija
+
+// Get i Set metode za Pol, Drzavu Rodjenja, Mesto Rodjenja i Gresku
+
+GUI.java
+
+	/*
+	 * Metoda koja se ubacuje kao akcija na nesto.
+	 * 
+	 * Metoda uzima iz txt polja JMBG rezultat, uz pomoc tog rezultata pravi
+	 * ostale rezultate u koliko dodje do greske izbacuje novi prozor, u novom
+	 * prozoru moze da se unese ponovo JMBG u koliko se opt pogresi prozor se
+	 * opet pojavljuje. Prozor moze das e pojavi 3 puta, posle toga izlazi novi
+	 * prozor. Novi prozor prikazuje poruku o tome da je nastala greska i izlazi
+	 * iz programa.
+	 */
+
+	/*
+	 * Ova metoda izbacuje novi prozor koj kaze:
+	 * "Previse puta ste pokusali dovidjenja :D " i izlazi iz programa
+	 */
+
+	/*
+	 * Ova metoda izbacuje novi prozor, u kome pise da ste pogresno uneli JMBG
+	 * daje vam txt polje u kome mozete ponovo da napisete jmbg. taj jmbg
+	 * upisuje u polje glavnog prozora i izracuvana podatke odatle. Inkrementuje
+	 * brojaGUI zbog zastite ( da neko ne pogadja milion puta maticni broj )
+	 */
+
+		// Dole se dodaje akcija kad se klikne dugme ENTER na tastaturi
+
+		// Zavrseno ENTER dodavanje
+
+		// Pravim Button za Unosenje jmbg, i komanda koja ce se uneti
+
+		// Button zavrsen
+
+
+
+
+
