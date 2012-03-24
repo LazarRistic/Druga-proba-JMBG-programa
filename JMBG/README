@@ -1,0 +1,7 @@
+Creator: Lazar Ristic, rista_junior@eunet.rs
+
+Aplikacija sluzi da se jedinstveni maticni broj pretvori u datum rodjenja, drzvu rodjenja, mesto rodjenja i pol.
+
+Aplikacija je radjena u Javi. ZA java okruzenje koristio sam Eclipse.
+
+Pokrenuti JMBGconverter i ukucajte vas jmbg radi dobijanje gore navedenih infromacija.
